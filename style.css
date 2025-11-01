@@ -1,320 +1,226 @@
 @charset "UTF-8";
-
 * {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version */
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
-
 html {
-  font-size: 16px;
+  font-size:16px
 }
-
 body {
-  margin: 0;
-  font-family: 'Comic Sans MS', sans-serif;
+  margin:0;
+  font-family:'Comic Sans MS',sans-serif;
+  background-color:hsl(232deg, 23%, 18%);
+  color: hsl(227deg, 68%, 88%)
 }
-
 button {
-  position: relative;
-  padding: .2em .5em;
-  border: 2px solid;
-  border-radius: .2em;
-  background-color: white;
-  color: hsl(210, 80%, 40%);
-  transition: .2s;
-  font-family: 'Comic Sans MS', sans-serif;
+  position:relative;
+  padding:.2em .5em;
+  border:2px solid;
+  border-radius:.2em;
+  background-color:hsl(232,23%,18%);
+  color:hsl(227deg, 68%, 88%);
+  transition:.2s;
+  font-family:'Comic Sans MS',sans-serif
 }
-
 button:not(:disabled):hover {
-  border-color: hsl(210, 80%, 40%);
-  background-color: hsl(210, 80%, 40%);
-  color: white;
+  border-color:hsl(232deg, 23%, 18%);
+  background-color:hsl(227deg, 68%, 88%);
+  color:hsl(232deg, 23%, 18%);
 }
-
 button:disabled {
-  color: hsl(210, 40%, 80%);
+  color:hsl(230deg, 12%, 49%)
 }
-
-/* A little circle in the upper corner of a button */
 .button-notification {
-  animation: plop .2s;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: -1em;
-  margin-right: -1em;
-  padding: .5em;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  background-color: hsl(210, 80%, 40%);
-  color: white;
-  font-size: .75em;
-  line-height: 1em;
+  animation:plop .2s;
+  position:absolute;
+  top:0;
+  right:0;
+  margin-top:-1em;
+  margin-right:-1em;
+  padding:.5em;
+  width:1em;
+  height:1em;
+  border-radius:50%;
+  background-color:hsl(234deg, 82%, 85%);
+  color:rgb(36, 39, 58);
+  font-size:.75em;
+  line-height:1em
 }
-
 @keyframes plop {
   from {
-    transform: scale(0);
+    transform:scale(0)
   }
   to {
-    transform: scale(1);
+    transform:scale(1)
   }
 }
-
-/* Helper class that centers a box */
 .container {
-  margin: 0 auto;
-  width: 720px;
+  margin:0 auto;
+  width:720px
 }
-
-/* Top part of the site that stays the same across views */
 .topbar {
-  border-bottom: 1px solid;
+  border-bottom:1px solid
 }
-
-/* Add some white space to the page */
-.topbar > .container {
-  padding: .5em 0;
+.topbar>.container {
+  padding:.5em 0
 }
-
-/* The app's title */
 .topbar-title {
-  margin: 0;
-  font-size: 2em;
-  text-align: center;
+  margin:0;
+  font-size:2em;
+  text-align:center
 }
-
-/* Links in the topbar (not necessarily <a> elements) */
 .topbar-links {
-  margin-top: 1em;
-  text-align: center;
+  margin-top:1em;
+  text-align:center
 }
-
 .topbar-link,
 .topbar-link:active,
 .topbar-link:visited {
-  color: blue;
-  text-decoration: none;
-  cursor: pointer;
+  color:hsl(220deg, 83%, 75%);
+  text-decoration:none;
+  cursor:pointer
 }
-
-/* "before every topbar-link *immediately* after a topbar-link" */
-.topbar-link + .topbar-link:before {
-  content: ' · ';
+.topbar-link+.topbar-link:before {
+  content:' · '
 }
-
-/* Add some white space to the page */
-.main > .container {
-  padding: .5em 0;
+.main>.container {
+  padding:.5em 0
 }
-
-/* .main element on the clicker page */
-.clicker {
-}
-
-/* The area where the player is supposed to click all the time */
 .clicker-clickarea {
-  margin: 0 auto;
-  width: 300px;
-  height: 300px;
-  border: .5em solid white;
-  /* Make a circle */
-  border-radius: 50%;
-  /* Images must be 300x300 */
-  background-image: url('./resources/tichy_swt.jpg');
-  background-size: 100% 100%;
+  margin:0 auto;
+  width:300px;
+  height:300px;
+  border:.5em solid hsl(233deg, 23%, 15%);
+  border-radius:50%;
+  background-image:url('./resources/tichy_swt.jpg');
+  background-size:100% 100%
 }
-
 .clicker-clickarea:active {
-  border-color: hsl(210, 80%, 40%);
+  border-color:hsl(210,80%,40%)
 }
-
-.clicker-clickarea > canvas {
-  width: 100%;
-  height: 100%;
+.clicker-clickarea>canvas {
+  width:100%;
+  height:100%
 }
-
-/* The main score counter */
 .clicker-counter {
-  margin-top: .5em;
-  font-size: 1.5em;
-  text-align: center;
+  margin-top:.5em;
+  font-size:1.5em;
+  text-align:center
 }
-
 .clicker-counter-label {
-    font-size: .5em;
+  font-size:.5em
 }
-
-/* The main income counters */
 .clicker-incomes {
-  margin-top: .5em;
-  text-align: center;
+  margin-top:.5em;
+  text-align:center
 }
-
 .clicker-income {
-  display: inline-block;
+  display:inline-block
 }
-
 .clicker-income.-rainbowmode {
-  animation: rainbowtext .5s linear 0s infinite;
+  animation:rainbowtext .5s linear 0s infinite
 }
-
 .clicker-income.-rainbowmode:before {
-    display: block;
-    position: absolute;
-    content: attr(data-seconds) "s";
-    left: 0;
-    top: -1em;
-    right: 0;
-    height: 1em;
-
-    font-size: .75em;
-    text-align: center;
+  display:block;
+  position:absolute;
+  content:attr(data-seconds) "s";
+  left:0;
+  top:-1em;
+  right:0;
+  height:1em;
+  font-size:.75em;
+  text-align:center
 }
-
 @keyframes rainbowtext {
-    0% {
-        color: hsl(0, 100%, 50%);
-    }
-
-    25% {
-        transform: translate(0, -.1em);
-    }
-
-    33.3% {
-        color: hsl(120, 100%, 50%);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    66.6% {
-        color: hsl(240, 100%, 50%);
-    }
-
-    75% {
-        transform: translate(0, .1em);
-    }
-
-    100% {
-        color: hsl(360, 100%, 50%);
-    }
+  0% {
+    color:hsl(351deg, 74%, 73%)
+  }
+  25% {
+    transform:translate(0,-.1em)
+  }
+  33.3% {
+    color:hsl(40deg, 70%, 78%)
+  }
+  50% {
+    transform:translate(0,0)
+  }
+  66.6% {
+    color:hsl(220deg, 83%, 75%)
+  }
+  75% {
+    transform:translate(0,.1em)
+  }
+  100% {
+    color:hsl(105deg, 48%, 72%)
+  }
 }
-
-/* Area where the shop buttons etc are */
 .clicker-controls {
-  margin-top: .5em;
-  text-align: center;
+  margin-top:.5em;
+  text-align:center
 }
-
-/* A button that leads to a shop */
 .clicker-controls-shopbutton {
-  padding: .5em;
+  padding:.5em
 }
-
-.clicker-controls-shopbutton + .clicker-controls-shopbutton {
-  margin-left: 1em;
+.clicker-controls-shopbutton+.clicker-controls-shopbutton {
+  margin-left:1em
 }
-
-/* main element on the shop pages */
-.shop {
-}
-
-/* shop menu that can have some buttons and some info */
 .shop-menu {
-  display: flex;
+  display:flex
 }
-
-/* a button in the shop menu */
-.shop-menu-buttom {
-}
-
-/* a text field in the shop menu. these should fill most of the space */
 .shop-menu-info {
-  flex: 1;
-  text-align: right;
+  flex:1;
+  text-align:right
 }
-
-/* The shop's title */
 .shop-title {
-  text-align: center;
+  text-align:center
 }
-
-/* A short (one line) description of the shop's items */
 .shop-description {
-  text-align: center;
+  text-align:center
 }
-
-/* The items one can buy in this shop */
 .shop-items {
-  padding: 0;
+  padding:0
 }
-
-/* Items of the shop. On bigger screens, 2 should be on each "line" */
 .shop-item {
-  display: block;
-  box-sizing: border-box;
-  padding: .25em;
-  float: left;
-  width: 50%;
-  list-style: none;
+  display:block;
+  box-sizing:border-box;
+  padding:.25em;
+  float:left;
+  width:50%;
+  list-style:none
 }
-
 .shop-item:nth-child(2n+3) {
-  clear: left;
+  clear:left
 }
-
-/* The name of the item */
-.shop-item-name {
-}
-
-/* A short (one line) description of an item */
 .shop-item-description {
-  font-size: .75em;
+  font-size:.75em
 }
-
-/* The button to buy the item */
 .shop-item-buy {
-  box-sizing: border-box;
-  margin-top: .5em;
-  width: 100%;
+  box-sizing:border-box;
+  margin-top:.5em;
+  width:100%
 }
-
-/* The main element on text pages */
-.text {
-}
-
-/* The title element */
 .text-title {
-  text-align: center;
+  text-align:center
 }
-
-/* The text content */
 .text-content {
-  line-height: 1.5em;
+  line-height:1.5em
 }
-
-/* Responsive version for screens narrower than 720 pixels */
-@media (max-width: 720px) {
+@media(max-width:720px) {
   .container {
-    margin: auto;
-    padding: .25em;
-    width: auto;
+    margin:auto;
+    padding:.25em;
+    width:auto
   }
-
-  .main > .container {
-    padding: .5em .25em;
+  .main>.container {
+    padding:.5em .25em
   }
-
   .shop-item {
-    float: none;
-    clear: none;
-    width: auto;
+    float:none;
+    clear:none;
+    width:auto
   }
 }
